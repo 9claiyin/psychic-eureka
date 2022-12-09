@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <div>
+            onkeyup,onkeydown,onkeypress 键盘松开，键盘按下，，按下触发（不识别功能键）
+            <!-- keypress不会判断部分功能键 -->
+        </div>
+    </div>
+
+    <script>
+        // 键盘事件对象
+        // keyCode判断按下了哪个键
+        document.addEventListener("keyup", function(e) {
+            console.log('keydown:', e.keyCode, e.key)
+        })
+        document.addEventListener("keypress", function(e) {
+            console.log('keypress:' + e.keyCode, e.key)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            margin-left: 200px;
+            margin-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    获取鼠标在盒子中的坐标
+    <!-- 获取鼠标在盒子中的坐标
+        1.获取鼠标坐标e.pageX，e.pageY
+        2.获取盒子距离body距离
+        3.两者相减
+    -->
+    <!-- 
+        element.offsetParent  获得带有定位的父元素
+        element.offsetTop  获得距离带有定位的父元素距离的y轴距离
+        element.offsetWidth  获取自身宽度，包括内边距和边框
+
+
+     -->
+    <div class="div">
+
+    </div>
+    <script>
+        var div = document.querySelector(".div")
+        div.addEventListener("mousemove", function(e) {
+            //  var x=e.pageX;
+            //  var y=e.pageY;
+            //  var by=div.offsetTop;
+            //  var bx=div.offsetLeft;
+            var x = e.pageX - div.offsetLeft;
+            var y = e.pageY - div.offsetTop;
+            console.log(x, y);
+            div.innerHTML = "x值：" + x + ",y值：" + y
+        })
+    </script>
+</body>
+
+</html>

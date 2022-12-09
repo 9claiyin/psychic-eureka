@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <script>
+
+        window.onload=function(){
+// 当文档内容完全加载完成会触发这个事件
+// 有了这个时间script标签可以放在任何地方
+
+
+        }
+        // 第二种
+        window.addEventListener("load",function(){
+            // 页面全部加载完毕
+        })
+        // 第三种
+        window.addEventListener("DOMContentLoaded",function(){
+            // 这个适用于图片特别多的时候
+            // DOm加载完毕就执行，不报含falsh  css等就可以执行，加载速度比load更快
+        })
+    </script>
+</body>
+</html>

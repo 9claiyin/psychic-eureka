@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 事件修饰符 -->
+
+
+    <div id="app">
+        <input type="file">
+        <a href="https://v2.cn.vuejs.org/v2/guide/" @click.prevent="show">跳转到vue</a>
+    </div>
+    <hr>
+    <div @click="div" style="width: 100px;height: 200px;background-color: aqua;">
+        <button @click.stop="btn">dianji</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+
+            },
+            methods: {
+                show() {
+                    console.log("点击了跳转链接，prevent阻止了跳转")
+
+                },
+                div() {
+
+                    console.log("divvvvvv")
+                },
+                btn() {
+                    console.log("btnmnnnnn   ,  .stop阻止冒泡")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

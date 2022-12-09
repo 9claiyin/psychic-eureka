@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+
+    </div>
+
+    <script>
+
+        // 同步：执行任务的顺序和任务的顺序是同步的，一个一个执行
+        // 异步：多个任务同时
+
+        // 同步任务和异步任务：
+        // 同步任务放在主线程执行栈内，异步任务单独放一个
+        //   异步任务的类型：
+                        //1.普通事件，click,resize
+                        // 2.资源加载，load,error
+                        // 3.定时器，setInterval,setTimeout
+        // 执行机制：
+                        // 先执行同步任务
+                        // 遇到回调函数，先放在任务队列不执行，执行下一个同步
+                        // 然后最后将任务队列的异步任务拿到执行栈的后面再执行
+        
+    </script>
+</body>
+</html>

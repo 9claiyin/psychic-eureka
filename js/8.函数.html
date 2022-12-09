@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="demo"></div>
+    <!-- 
+    <script>
+        //1.计算1到100的和
+        function myFunction() {
+            var sum = 0;
+            for (var i = 1; i <= 100; i++) {
+                sum += i;
+            }
+            console.log(sum)
+            document.getElementById("demo").innerHTML = sum
+        }
+        myFunction()
+    </script> -->
+
+    <!-- <script>
+        2.
+        // 实参多余形参，不参与
+        // 实参小于形参NaN
+
+    </script> -->
+    <!-- <script>
+
+        // 2.函数的返回值,返回给调用者
+        function myFunction(){
+
+
+            return
+        } -->
+    <!-- </script> -->
+
+
+    <!-- <script>
+        //3.求以数组的最大值
+        function myFunction(arr) {
+            var max = arr[0];
+            for (var i = 1; i <= arr.length; i++) {
+                if (arr[i] > max) {
+                    max = arr[i];
+                }
+            }
+            return max
+        }
+        var b = myFunction([12, 34, 56, 3, 67, 34, 68, 78])
+        document.getElementById("demo").innerHTML = b
+    </script> -->
+
+    <script>
+        // 4.arguments,里面存储了所有的实参，以伪数组存储
+        function myFunction() {
+            return arguments[2]
+        }
+        var c = myFunction(12, 34, 45, 56)
+        document.getElementById("demo").innerHTML = c
+    </script>
+    
+</body>
+
+</html>

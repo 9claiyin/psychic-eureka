@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <div>
+        <label for="pa">密码</label>
+        <input type="password" name="" di="pa"><button>点击</button>
+
+        <input type="text" value="默认手机" id="ss">
+    </div>
+
+    <script>
+        // DOM可以操作表单的一些属性：
+        // type,checked,value,selected,disabled
+
+        // 1.按钮的重复点击  disabled
+        // 2.密码可见，改变type,改为文本框，1，0，改变
+        // 3.文本框获得焦点，默认文字消失
+
+        // 密码可见
+        var a = document.querySelector("input")
+        var b = document.querySelector("button")
+        var flag = 0
+        b.onclick = function() {
+            if (flag == 0) {
+                a.type = "text";
+                flag = 1
+            } else {
+                a.type = "password";
+                flag = 0
+            }
+        }
+
+        // 文字消失,获得与失去焦点
+        var fou = document.getElementById("ss");
+        fou.onfocus = function() {
+            if (this.value == "默认手机") {
+                this.value = ""
+            }
+            this.style.color="#333"
+        }
+        fou.onblur = function() {
+            if (this.value == "") {
+                this.value = "默认"
+            }
+        }
+    </script>
+</body>
+
+</html>

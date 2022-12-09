@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        1.3种创建方式
+        2.new关键字
+        3.遍历对象属性的方法
+
+        <!--  -->
+        对象是一个具体的事物，属性和方法的集合
+        一。创建
+        <!-- 1.字面量 -->
+        var obj={
+            name:'gf',
+            age:23,
+            hanshu:function(){   //匿名函数
+                return 132
+            }
+        }
+        调用属性：obj.name  或 obj['name']
+
+        <!-- 2.new 关键字创建 -->
+        var a =new Object()
+        a.name='wdf';
+        a.age=78;
+        a.hanshu=function(){
+            return 213
+        }
+        <!-- 3.构造函数创建，可一次创建多个 -->
+        函数封装对象
+        function 构造函数名（）{
+            this.属性=“”，
+        }
+        function Obj(name,age,sex){
+            this.name=name,
+            this.age=age,
+            this.fangfa=function(a){
+                console.log(a)
+            }
+        }
+        调用
+        var a= new Obj('ddsad',32);
+        a.fangfa(1324)
+
+        三，遍历
+        var a={
+            name:"2134"
+        }
+        <!-- for...in... -->
+        for (var k in a){
+            console.log(k)  //属性名
+            console.log(a[k])  //属性值
+            
+        }
+    </div>
+</body>
+</html>

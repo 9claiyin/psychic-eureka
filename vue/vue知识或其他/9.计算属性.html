@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 200px;
+            border: 1px red solid;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 计算属性定义为方法，使用时可以当普通属性使用 -->
+    <div id="app">
+        R<input type="text" v-model.number="R"> <br> G
+        <input type="text" v-model.number="G"><br> B
+        <input type="text" v-model.number="B"><br>
+
+
+        <div class="div" :style="{backgroundColor:rgb}">
+            <!-- `rgb(${R},${G},${B})` -->
+            {{rgb}} 计算属性指的是经过一系列计算之后得到的属性值
+        </div>
+        <button @click="show()">点击</button>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                mes: "hello",
+                R: 0,
+                G: 0,
+                B: 0,
+            },
+
+
+            methods: {
+                show() {
+                    console.log(this.rgb)
+                }
+
+            },
+            computed: {
+                rgb: function() {
+                    return `rgb(${this.R},${this.G},${this.B})`
+                },
+
+            },
+        })
+    </script>
+</body>
+
+</html>

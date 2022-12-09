@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+            position: absolute;
+            top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <!-- 
+            原理：通过定时器setInterval（）不断移动盒子位置。
+                1.获得当前我位置
+                2.让盒子移动一格距离
+                3.定时器重复
+                4.结束
+
+
+         -->
+    </div>
+    <button>dianji</button>
+    <script>
+        var div = document.querySelector("div");
+        var btn = document.querySelector("button")
+        btn.addEventListener("click", function() {
+                animate(div, 600)
+            })
+            // var time = setInterval(function() {
+            //     if (div.offsetLeft >= 500) {
+            //         clearInterval(time)
+            //     } else {
+            //         div.style.left = div.offsetLeft + 2 + "px";
+            //     }
+
+        // }, 30)
+        // -------------------------------------------------------------------------
+        // 指定两个参数将上面两个盒子封装起来
+        function animate(obj, n,callback) {  //回调函数调用  callback()
+            clearInterval(obj.time) //防止调用时定时器多开
+            obj.time = setInterval(function() {  //给对象添加一个属性，将函数赋值进去
+                if (obj.offsetLeft >= n) {
+                    clearInterval(obj.time)
+                } else {
+                    div.style.left = div.offsetLeft + 10 + "px";
+                }
+
+            }, 30)
+        }
+        // 调用已经封装的函数
+        // animate(div, 600)
+
+// ---------------------------------------------------------------------------------
+// 2动画缓动
+// 将+后面的值改为（公式目标值-现在位置）/10，，盒子位置到达指定位置时停止
+
+// -------------------------------------------
+animate(div, 600 ,function(){})//回调函数，函数也可以作为一个参数传入
+
+// -----------------------------------------------------------
+    </script>
+</body>
+
+</html>

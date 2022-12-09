@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+        
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="son">124324</div>
+    </div>
+    <script>
+        // 冒泡与捕获、决定父子先后执行的顺序
+        // true,捕获，父先。。。false，冒泡，子先
+        // 1.默认 谁前谁先
+        var son = document.querySelector(".son");
+        var fa = document.querySelector(".father");
+        fa.addEventListener("click", function() {
+            alert("fa")
+        }, true)
+        son.addEventListener("click", function() {
+            alert("son")
+        });
+        // --------------------------------
+        // 阻止冒泡
+
+        e.stopProppagation()
+    // 旧版本
+    window.event.cancelBubble=true;
+
+
+    // 
+    if(e && e.stopProppagation){
+        e.stopProppagation()
+    }else{
+        window.event.cancelBubble=true;
+
+    }
+    </script>
+
+</body>
+
+</html>

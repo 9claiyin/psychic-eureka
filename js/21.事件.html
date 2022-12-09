@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <button>31425</button>
+        <button>1343</button>
+
+    </div>
+    <script>
+        // 主策方式：传统，方法监听注册
+        // 1.on开头
+        // 唯一性，只能设置一个处理函数，后一个会覆盖前一个
+
+        // 2.方法监听注册
+        // addEventListener(),同一个可以注册多个函数
+        // .addEventListener(事件类型，函数，可选参数)
+
+        var btns = document.querySelectorAll("button")
+        btns[0].addEventListener("click", function() {
+            alert(132435)
+        })
+        
+    </script>
+</body>
+
+</html>

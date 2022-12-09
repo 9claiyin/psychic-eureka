@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>1331</button>
+    <div>
+        ff23r432tf
+        e.type,事件类型
+        e.cancelBubble阻止冒泡
+
+    </div>
+
+    <script>
+        // 1.e.target 返回的是触发事件的对象（元素）
+        // 2.this返回绑定事件的对象
+        var btn = document.querySelector("button");
+        var div = document.querySelector("div");
+        div.addEventListener("click", function(e) {
+            console.log(e.target);
+            console.log(this)
+        })
+
+        // 阻止链接提交默认行为进行
+        btn.addEventListener("click",fn);
+        function fn(e){
+            // 当前方式唯一
+            e.preventDefault()
+
+            // ---------传统
+            // 低版本浏览器
+            e.returnValue;
+            // 无兼容性问题，但后面的不运行
+            return false
+        }
+    </script>
+</body>
+
+</html>

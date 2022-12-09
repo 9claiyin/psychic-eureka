@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+
+    <div id="app">
+        <!-- 
+            一。侦听器：（watch）监视data中数据变化，从而对数据的变化做特定的操作
+                1.watch中监听的data值就是函数名
+
+           二。原理;实时监听输入的用户名并像后端发送请求判断是否用户名已经被占用
+
+           三。方法格式侦听器：无法刚进入页面时侦听
+            对象格式侦听器：可以通过immediate选项让侦听器自动触发
+            四。深度侦听，侦听一个data的对象里面的属性变化，用第二种且加deep:true
+
+         -->
+        <input type="text" name="" id="" v-model="mes">
+        <input type="text" v-model="info.li">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                mes: "hello",
+                info: {
+                    name: "li"
+                }
+            },
+            watch: {
+                // 第一种：方法格式的侦听器
+                // mes(newVal, oldVal) {
+                //     console.log("msg变化了，已经被监听到", newVal, oldVal)
+                // }
+                // 第二种：对象格式的侦听器
+                mes: {
+                    // 侦听器的处理函数
+                    handler(newVal, oldVal) { //或简写handler(newVal,oldVal){}
+                        console.log(newVal, oldVal)
+                    },
+                    // immediate,控制侦听器是否自动触发一次
+                    immediate: true
+                },
+                // 深度侦听，侦听对象info里面的属性name
+                info: {
+                    handler(newVal, oldVal) {
+                        console.log(newVal, oldVal)
+                    },
+                    // 开启深度监听
+                    deep: true
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

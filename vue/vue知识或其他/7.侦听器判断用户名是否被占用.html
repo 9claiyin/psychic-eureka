@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    
+
+
+    <div id="app">
+        <!-- 
+            侦听器：（watch）监视data中数据变化，从而对数据的变化做特定的操作
+                1.watch中监听的data值就是函数名
+
+            原理;实时监听输入的用户名并像后端发送请求判断是否用户名已经被占用
+
+         -->
+        <input type="text" name="" id="" v-model="mes">
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                mes: "hello"
+            },
+            watch: {
+                mes(newVal, oldVal) {
+                    console.log("msg变化了，已经被监听到", newVal, oldVal)
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

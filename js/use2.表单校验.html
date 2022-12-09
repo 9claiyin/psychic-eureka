@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            color: blueviolet;
+        }
+        
+        .wrong {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <input type="password" id='pass' value="">
+        <span>请输入6-16位字符</span>
+    </div>
+
+
+
+    <script>
+        var pass = document.querySelector("#pass");
+        var sp = document.querySelector("span");
+
+        pass.onblur = function() {
+            if (this.value.length < 6 || this.value > 16) {
+                sp.className = "span wrong"
+                sp.innerHTML = "您输入的位数不对，请重新输入"
+            }
+        }
+    </script>
+</body>
+
+</html>

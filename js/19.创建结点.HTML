@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <ul>
+            <li></li>
+            <li>但如果对方</li>
+            <li></li>
+        </ul>
+        <a href="javascript:;"></a>//阻止连接跳转
+    </div>
+
+    <script>
+        // 拿父节点
+        var ul = document.querySelector("ul")
+            // 创建节点
+        var nli = document.createElement('li');
+        // 添加节点,追加
+        ul.appendChild(nli)
+            // (2)也可以在指定元素的前面插入节点
+        ul.insertBefore(nli, ul.children[1])
+
+
+        // ___________________________-
+        // 删除节点
+        .removeChild()
+
+        
+    </script>
+</body>
+
+</html>

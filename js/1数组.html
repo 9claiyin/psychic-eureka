@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <button onclick="myFunction()">点击</button>
+    <p id="demo"></p>
+    <!-- 1.筛选
+    <script>
+        var arr = [2, 4, 56, 3, 572, 3, 62, 35, 764, 45, 2, 45, 647];
+        var newArr = [];
+        document.getElementById('demo').innerHTML = arr
+
+        function myFunction() {
+            var j = 0
+            for (var i = 0; i <= arr.length; i++) {
+                if (arr[i] > 100) {
+                    newArr[j] = arr[i];
+                    j++;
+                }
+            }
+            document.getElementById('demo').innerHTML = newArr
+            console.log(124356)
+        }
+    </script> -->
+    <!-- 2.升降序排序 -->
+    <!-- <script>
+        var arr = [2, 4, 56, 3, 572, 3, 62, 35, 764, 45, 2, 45, 647];
+
+        document.getElementById('demo').innerHTML = arr
+
+        function myFunction() {
+            arr.sort()  //排序
+            arr.reverse()  //反转
+            document.getElementById('demo').innerHTML = arr
+        }
+    </script> -->
+    <!-- 3.随机排序 -->
+    <!-- <script>
+        var arr = [12, 34, 657, 324, 67, 2, 1, 6, 4, 67, 234, 908, 453, 23, 1]
+        document.getElementById('demo').innerHTML = arr;
+
+        function myFunction() {
+            arr.sort(function(a, b) {
+                return 0.5 - Math.random()
+            })
+            document.getElementById('demo').innerHTML = arr
+        }
+    </script> -->
+    <!-- 4.找最大值最小值 -->
+    <!-- <script>
+        // Math.max,Math.min
+        var arr = [12, 34, 5, 3, 1, 54, 67]
+        document.getElementById('demo').innerHTML = myFunction(arr)
+
+        function myFunction(a) {
+            return Math.max.apply(null, a)
+        }
+    </script> -->
+    <script>
+        // 日期设置的方法
+        var d = new Date();
+        d.setFullYear(2023);
+        document.getElementById("demo").innerHTML = d
+    </script>
+</body>
+
+
+</html>

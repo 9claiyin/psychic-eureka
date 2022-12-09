@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        2222
+    </div>
+
+    <script>
+        // 事件对象写在侦听函数的小括号中，当形参
+        // 事件对象只有有了事件才会存在
+        // 事件对象是时间的一系列相关数据的集合，鼠标坐标等等
+        // 事件对象可以自己命名
+        var div = document.querySelector("div");
+        // 1.传统方法
+
+        // div.onclick = function(e) {
+        //         console.log(e)
+        // }
+        // 最新
+        div.addEventListener("click", function(e) {
+            console.log(e)
+        })
+    </script>
+</body>
+
+</html>

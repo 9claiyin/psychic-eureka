@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- 事件修饰符 -->
+
+
+    <div id="app">
+        {{a}}
+        <!-- 清空文本框按Esc -->
+        <input type="text" @keyup.esc="clearInput" @keyup.enter="up">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                a: "dsfd"
+            },
+            methods: {
+                clearInput(e) {
+                    // console.log(e)
+                    e.target.value = ""
+                },
+                up(e) {
+                    console.log("触发了enter,提交")
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

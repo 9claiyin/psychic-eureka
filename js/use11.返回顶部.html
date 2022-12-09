@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 80%;
+            height: 3000px;
+            background-color: aqua;
+        }
+        
+        .b {
+            width: 50px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+            right: 0px;
+            bottom: 200px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="b">window.pageYOffset页面的滚动距离</div>
+    <div class="box">
+
+    </div>
+    <script>
+        // 当页面滚动时，据顶部多余的部分有一定的距离，返回顶部按钮则会显示出来
+        var b = document.querySelector(".b");
+        document.addEventListener('scroll', function() {
+            console.log(window.pageYOffset)
+            if (window.pageYOffset >= 172) {
+                b.style.position = 'fixed';
+                b.style.display = "block"
+            } else {
+                b.style.position = 'absolute'
+                b.style.display = "none"
+            }
+        })
+    </script>
+</body>
+
+</html>

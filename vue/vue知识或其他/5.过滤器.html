@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   
+
+
+    <div id="app">
+        <!--1.过滤器：常用于文本的格式化，插值表达式和v-bind一般用到 
+            2.filters一般是一个函数
+            3.全局过滤器（写在实例之外），与私有过滤器（只对响应vue实例有效）
+            4.优先级，就近原则
+            5.{{aaa| bbb |ccc}},接续调用
+
+            
+            -->
+        {{ mes | fil }}
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        Vue.filter("fil", function(f) { //或箭头函数 （f）=>{}
+            var c = f.charAt(0).toUpperCase()
+            var d = f.slice(1) //首字母之后的
+            return c + d + "1111"
+
+        })
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                mes: "hello",
+
+            },
+            filters: { //过滤器，处理格式化插值语法与v-bind
+                fil: function(f) { //可以省略 ：function
+                    console.log(f)
+                    var a = f.charAt(0).toUpperCase() //拿到首字母大写
+                    var b = f.slice(1) //拿到其余的字母
+                    console.log(a, b)
+                    return a + b
+                }
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

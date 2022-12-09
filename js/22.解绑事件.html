@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <button>wrgeg</button>
+        <button>et43534</button>
+    </div>
+    <script>
+        // 1.xin解绑事件
+        // 
+        var btn = document.querySelectorAll("button");
+        btn[0].addEventListener("click", function fn() {
+                alert(2425);
+                btn[0].removeEventListener("click", fn)
+            })
+            // 2.传统
+
+        btn[1].onclick = function() {
+            alert(234235);
+            btn[1].onclick = null
+        }
+    </script>
+</body>
+
+</html>

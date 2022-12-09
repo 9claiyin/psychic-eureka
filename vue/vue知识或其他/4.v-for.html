@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <thead>
+            <tbody>
+                <tr v-for="item in list" :key="item.id">
+                    <td>{{ item.id }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <div>
+                            <input type="checkbox" id="a" v-model="item.is">
+                            <label for="a" v-if="is===false">未选中</label>
+                            <label for="a" v-else>已选中</label>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </thead>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+
+                list: [{
+                    id: 1,
+                    name: 'li',
+                    is: false
+                }, {
+                    id: 2,
+                    name: 'wu',
+                    is: false
+                }, {
+                    id: 3,
+                    name: 'zs',
+                    is: false
+                }, {
+                    id: 4,
+                    name: 'cl',
+                    is: false
+                }, ]
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

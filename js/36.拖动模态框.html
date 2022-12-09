@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(45, 133, 209);
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    mousedown,mousemove,mouseup 按下移动，最后松开，鼠标移动过程中将最新的鼠标位置赋值给模态框的left和top
+    <div class="div">
+        内容
+    </div>
+
+    <script>
+        var div = document.querySelector(".div");
+        //1.鼠标按下获得鼠标在盒子内的坐标
+        div.addEventListener("mousedown", function(e) {
+            var x = e.pageX - div.offsetLeft;
+            var y = e.pageY - div.offsetTop;
+            // 2.鼠标移动时，鼠标在页面中的坐标减去鼠标距离框的坐标
+            function move(e) {
+                div.style.left = e.pageX - x + "px";
+                div.style.top = e.pageY - y + "px"
+            }
+            document.addEventListener("mousemove", move)
+            document.addEventListener("mouseup", function(e) {
+                document.removeEventListener("mousemove", move)
+
+            })
+        })
+    </script>
+</body>
+
+</html>

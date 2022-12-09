@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo"></div>
+
+    <!-- <script>
+        // length,计算字符串长度
+        // indexOf("")  某个字符串首次出现的索引 lastIndexOf 最后一次出现的索引
+        // search(),搜索特定值并返回匹配的位置
+        // slice（ ， ）,截取
+        // replace替换
+        // split将字符串转换为数组
+
+
+    </script> -->
+    <script>
+        // 1.模板字面量
+        var a = "qewr";
+        var b = "wet";
+        var d = `hello,${a},,${b}`
+        var c = `你好，${a+b}`
+        document.getElementById("demo").innerHTML = c
+            // 模板字面量允许字符串中使用表达式
+            // 也可以写HTML
+    </script>
+
+
+</body>
+
+</html>

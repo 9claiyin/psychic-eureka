@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <button>点击了一下</button>
+    </div>
+    <script>
+        // 浏览器事件兼容性处理
+        var btn = document.querySelector("button");
+
+        function addEventListener(element, eventName, fn) {
+            if (element.addEventListener) { //ie9以上
+                element.addEventListener(eventName, fn);
+            } else if (element.attachEvent) { //只ie8一下，不建议
+                element.attachEvent(eventName, fn)
+            } else {
+                // 元素.on事件=function(){}   都支持
+                element['on' + eventName] = fn
+            }
+        }
+        btn.addEventListener("click")
+    </script>
+</body>
+
+</html>

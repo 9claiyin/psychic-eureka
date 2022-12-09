@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id=demo>213tr</div>
+    <ul>
+        <li></li>
+        <li></li>
+        <li>`134</li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="box">内容</div>
+    <script>
+        // WEBAPI
+        // DOM
+        // 文档对象模型是处理可扩展标记语言的标准编程接口html,xml
+        // 通过DOM可以改变页面内容样式
+            // 1.getElementById,获取id为某值的
+            a = document.getElementById("demo");
+            console.log(a)
+            console.log(typeof a)
+            console.dir(a); //打印返回的元素对象，更好的查看里面的属性和方法
+
+
+            // 2.getElementsByTagName()获取所有的标签为该值的标签
+            b = document.getElementsByTagName('li')
+            console.log(b) //返回元素对象的集合，伪数组形式存储
+            console.log(b[2])
+                // 遍历
+            for (var i = 0; i <= b.length; i++) {
+                console.log(b[i])
+
+
+            // 3.element.getElementsByTagName    element表示父元素的标签名
+            // var c = document.getElementById("ul"); //先获取到父元素
+            // console.log(c.getElementsByTagName('li'))
+
+            // 4.getElementsByClassName根据类名获得
+            var d = document.getElementsByClassName("box")
+            console.log(d)
+
+
+            // 5.querySelector  返回指定选择器的第一个元素对象
+            var e = document.querySelector(".box")
+            console.log(e)
+
+            // 6.querySelectorAll,获取所有，指定元素的
+        }
+    </script>
+</body>
+
+</html>

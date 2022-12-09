@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- v-model -->
+
+
+    <div id="app">
+        <!-- {{this.username}} -->
+        <input type="text" v-model="username">
+        <hr>
+        <input type="text" :value="username">
+        <hr>
+        <!-- v-model指令专用的修饰符  .number  .trim（去除空格）  .lazy（实时） -->
+        <div>
+            .number自动将输入值转化为数值类型<br>
+            <input type="text" v-model.number="a">
+            <input type="text" :value="a"><br> .trim自动过滤用户输入的首尾空白字符 .lazy
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        const vm = new Vue({
+
+            el: "#app",
+            data: {
+                username: 'q234576ty7g',
+                a: '234'
+            },
+            methods: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

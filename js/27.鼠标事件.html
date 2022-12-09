@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: rgba(235, 213, 15, 0.856);
+        }
+    </style>
+</head>
+
+<body>
+    <div>鼠标事件</div>
+    <div class="a"></div>
+
+    <script>
+        // 1.禁止鼠标右键菜单contcxtmcnu     (禁止复制等的菜单)
+        var div = document.querySelector("div")
+        div.addEventListener("contextmenu", function(e) {
+            e.preventDefault(); //右键菜单无法打开
+        })
+
+        // 2.禁止选中
+        div.addEventListener("selectstart", function(e) {
+            e.preventDefault(); //禁止选中
+        })
+
+        // 2.鼠标点击事件对象MouseEvent
+        document.addEventListener("click", function(e) {
+            console.log(e)
+                //1、 鼠标在可视区的x,y坐标
+            console.log(e.clientX, e.clientY)
+                // 2、在页面的坐标
+            console.log(e.pageX, e.pageY) //ie9以上
+        })
+
+
+        // 3.鼠标的移动事件 mousemove
+        var a = document.querySelector(".a");
+        document.addEventListener("mousemove", function(e) {
+            console.log(e)
+            console.log()
+            x = e.pageX;
+            y = e.pageY;
+            a.style.left = x + "px";
+            a.style.top = y + "px";
+
+
+
+
+        })
+        // 4。mouseover 与mouseenter 区别
+        // 但mouseover经过父盒子里面的子盒子也会触发该事件，会冒泡
+        // 但是mouseenter只有经过自身才会触发
+    </script>
+
+
+</body>
+
+</html>
